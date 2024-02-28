@@ -17,9 +17,9 @@ body{
 canvas {
    
     border: 1px solid lightgray;
-  
+    
 }
 
 img{
-    
+    width: auto;
 }
