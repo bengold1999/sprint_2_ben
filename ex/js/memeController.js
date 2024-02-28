@@ -26,7 +26,7 @@ function renderMeme() {
     img.onload = () => {
         gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
         gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight)
-        drawText(img) //// back here!!!
+        drawText(selctedImg) //// back here!!!
     }
 }
 
@@ -38,9 +38,13 @@ function resizeCanvas() { ///backhe!!!!!!!
 
 
 
-function drawText(img) {
-
+function drawText(meme) {
     
+//     let textMeme =  meme.lines
+//    console.log(textMeme) 
+//     const {text,size,color} = textMeme
+    
+ 
 
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'orange'
@@ -51,6 +55,8 @@ function drawText(img) {
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
 
-    gCtx.fillText('hello', 100, 100)
-    gCtx.strokeText('hello', 100, 100)
+    gCtx.fillText('hey', 100, 100)
+    gCtx.strokeText('hey', 100, 100)
 }
+
+
