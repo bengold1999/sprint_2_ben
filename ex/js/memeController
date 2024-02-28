@@ -12,17 +12,18 @@ function onInit(){
 }
 
 function renderMeme() {
-    const selctedImg = { id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }
+    const selctedImg = getMeme()
     const img = new Image()
+    console.log(selctedImg)
     img.src = selctedImg.url
     console.log(selctedImg.url)
     const elContainer = document.querySelector('.canvas-container')
-   gElCanvas.width = elContainer.clientWidth
+    // gElCanvas.width = elContainer.clientWidth
    
 
     img.onload = () => {
-        gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
         gElCanvas.width = elContainer.clientWidth
+        gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
         gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight)
     }
 }
