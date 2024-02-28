@@ -5,10 +5,10 @@ let gCtx
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
-    resizeCanvas()
+    // resizeCanvas()
 
-
-    window.addEventListener('resize', () => resizeCanvas())
+    renderMeme()
+    // window.addEventListener('resize', () => resizeCanvas())
 }
 
 function renderMeme() {
@@ -25,20 +25,23 @@ function renderMeme() {
 
     img.onload = () => {
         gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
-        gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight)
-        drawText(selctedImg) //// back here!!!
+        gCtx.drawImage(img, 0, 0,gElCanvas.width, gElCanvas.height)
+        setLineTxt()
+         //// back here!!!
     }
 }
 
 
 
-function resizeCanvas() { ///backhe!!!!!!!
-    renderMeme()
-}
+
+
+// function resizeCanvas() { ///backhe!!!!!!!
+//     renderMeme()
+// }
 
 
 
-function drawText(meme) {
+function drawText(text,x,y) {
     
 //     let textMeme =  meme.lines
 //    console.log(textMeme) 
@@ -55,8 +58,8 @@ function drawText(meme) {
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
 
-    gCtx.fillText('hey', 100, 100)
-    gCtx.strokeText('hey', 100, 100)
+    gCtx.fillText(text,x,y)
+    gCtx.strokeText(text,x,y)
 }
 
 

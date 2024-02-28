@@ -34,5 +34,9 @@ function getMemeFromImg(){
 
 
  function setLineTxt(){
+    var userText = document.querySelector('.text-meme').value
+    
+        drawText(userText,100,100)
+        // renderMeme()
     
  }
